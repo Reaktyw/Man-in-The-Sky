@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f95ee316b4959ef42accfc793c8da7bd
+guid: 0862e1b2b04b4ed43a109ebd7cf45b4d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Angel2BreathingAnimation_0
+      name: Angel2RunningAnimation_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aee806f10a9e6254abdbdcd44ebf41b1
-      internalID: -903761276
+      spriteID: 08af5c9d9f240ed478c4860855ce3a37
+      internalID: -1854419473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Angel2BreathingAnimation_1
+      name: Angel2RunningAnimation_1
       rect:
         serializedVersion: 2
         x: 128
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4130c789d3462347963f3d192b2ee77
-      internalID: -672339992
+      spriteID: 8cdf1879ce2d51c4d87f9f9d412c4254
+      internalID: 1390447793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Angel2BreathingAnimation_2
+      name: Angel2RunningAnimation_2
       rect:
         serializedVersion: 2
         x: 256
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e168766962e373a4a89a34fa86ec6d78
-      internalID: 1851132106
+      spriteID: 3805d78158c52ae41bd47cb07388fe3a
+      internalID: 328416952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Angel2BreathingAnimation_3
+      name: Angel2RunningAnimation_3
       rect:
         serializedVersion: 2
         x: 384
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5551e5615252d7047865323ebabdb0e1
-      internalID: -2075437396
+      spriteID: 494390241b373794c98625dba6d98dba
+      internalID: 1413158179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Angel2BreathingAnimation_4
+      name: Angel2RunningAnimation_4
       rect:
         serializedVersion: 2
         x: 512
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aec543768e8f4be45a2e86dfa81b5374
-      internalID: 1565288177
+      spriteID: 0abaddfeab475f649a685756461f32f3
+      internalID: -1931807525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Angel2BreathingAnimation_5
+      name: Angel2RunningAnimation_5
       rect:
         serializedVersion: 2
         x: 640
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c94101d5d87900345a6ff9b2b0d5ac1b
-      internalID: 1295595811
+      spriteID: bfb250c2854a9024c828f54f6c851d88
+      internalID: -1045690739
       vertices: []
       indices: 
       edges: []
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Angel2BreathingAnimation_0: -903761276
-      Angel2BreathingAnimation_1: -672339992
-      Angel2BreathingAnimation_2: 1851132106
-      Angel2BreathingAnimation_3: -2075437396
-      Angel2BreathingAnimation_4: 1565288177
-      Angel2BreathingAnimation_5: 1295595811
+      Angel2RunningAnimation_0: -1854419473
+      Angel2RunningAnimation_1: 1390447793
+      Angel2RunningAnimation_2: 328416952
+      Angel2RunningAnimation_3: 1413158179
+      Angel2RunningAnimation_4: -1931807525
+      Angel2RunningAnimation_5: -1045690739
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

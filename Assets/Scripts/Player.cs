@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private Animator anim;
 
 
     private void Update()
@@ -59,10 +60,12 @@ public class Player : MonoBehaviour
         if (horizontal != 0f)
         {
             isWalking = true;
+            anim.SetTrigger("Running");
         }
         else if (horizontal == 0f)
         {
             isWalking = false;
+            anim.SetTrigger("Breathing");
         }
     }
 
