@@ -57,15 +57,13 @@ public class Player : MonoBehaviour
             transform.localScale = localScale;
         }
 
-        if (horizontal != 0f)
+        if (horizontal != 0f && !IsJumping())
         {
             isWalking = true;
-            anim.SetTrigger("Running");
         }
-        else if (horizontal == 0f)
+        else if (horizontal == 0f && !IsJumping())
         {
             isWalking = false;
-            anim.SetTrigger("Breathing");
         }
     }
 
