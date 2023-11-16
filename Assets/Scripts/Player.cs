@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private bool isWalking = false;
     private bool isJumping = false;
     private bool isClimbing = false;
+    private bool isFalling = false;
     private bool isFacingRight = true;
     public bool isDead = false;
 
@@ -77,11 +78,20 @@ public class Player : MonoBehaviour
     {
         if (!IsGrounded() && !IsClimbing())
         {
-            isJumping = true;
+            if (rb.velocity.y > 0)
+            {
+                isJumping = true;
+            }
+            else if(rb.velocity.y < 0)
+            {
+                isFalling = true;
+                isJumping = false;
+            }
         }
         else
         {
             isJumping = false;
+            isFalling = false;
         }
 
         if (Input.GetKeyDown(KeyCode.W) && IsGrounded())
@@ -127,5 +137,10 @@ public class Player : MonoBehaviour
     public bool IsDead()
     {
         return isDead;
+    }
+
+    public bool IsFalling()
+    {
+        return isFalling;
     }
 }
