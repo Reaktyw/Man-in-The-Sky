@@ -13,13 +13,12 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private Animator animator;
 
-
     void Update()
     {
         animator.SetBool(IS_WALKING, player.IsWalking());
         animator.SetBool(IS_JUMPING, player.IsJumping());
         animator.SetBool(IS_CLIMBING, player.IsClimbing());
         animator.SetBool(IS_FALLING, player.IsFalling());
-        //animator.SetBool(IS_DEAD, player.IsDead());
+        animator.SetBool(IS_DEAD, player.IsDead());
     }
 }

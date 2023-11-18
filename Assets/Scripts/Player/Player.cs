@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
             {
                 isJumping = true;
             }
-            else if(rb.velocity.y < 0)
+            else if (rb.velocity.y < 0)
             {
                 isFalling = true;
                 isJumping = false;
@@ -111,6 +111,7 @@ public class Player : MonoBehaviour
             isClimbing = true;
             isWalking = false;
             isJumping = false;
+            isFalling = false;
             rb.velocity = new Vector2(0f, climbingSpeed);
         }
         else
