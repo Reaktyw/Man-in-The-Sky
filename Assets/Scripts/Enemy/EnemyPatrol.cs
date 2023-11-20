@@ -9,10 +9,13 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] private Transform enemy;
     [SerializeField] private float speed;
     [SerializeField] private float idleDuration;
+    [SerializeField] private Animator anim;
 
-    private float idleTimer;
-    private Vector3 initScale;
     private bool movingLeft;
+    private Vector3 initScale;
+    private float idleTimer;
+
+
     
 
 
@@ -21,6 +24,10 @@ public class EnemyPatrol : MonoBehaviour
         initScale = enemy.localScale;
     }
 
+    private void OnDisable()
+    {
+        anim.SetBool("Walking", false);
+    }
 
     private void Update()
     {
@@ -61,8 +68,9 @@ public class EnemyPatrol : MonoBehaviour
 
     private void MoveInDirection(int _direction)
     {
-        idleTimer = 0;
+        anim.SetBool("Walking", true);
 
+        idleTimer = 0;
         enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction, initScale.y, initScale.z);
 
 

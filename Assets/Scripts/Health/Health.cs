@@ -26,5 +26,10 @@ public class Health : MonoBehaviour
             player.isDead = true;
         }
     }
+
+    public void AddHealth(float _value)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + _value, 0, maxHealth);
+    }
 }
 

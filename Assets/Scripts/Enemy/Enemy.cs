@@ -14,6 +14,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Health playerHealth;
 
     private float cooldownTimer = Mathf.Infinity;
+    private Animator anim;
+
+    private EnemyPatrol enemyPatrol;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+        enemyPatrol = GetComponentInParent<EnemyPatrol>();
+        anim.SetBool("Walking", true);
+    }
 
     private void Update()
     {
@@ -23,9 +33,14 @@ public class Enemy : MonoBehaviour
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
-                
+                anim.SetTrigger("Attack");
                 DamagePlayer();
             }
+        }
+
+        if (enemyPatrol != null)
+        {
+            enemyPatrol.enabled = !PlayerInSight();
         }
     }
 
