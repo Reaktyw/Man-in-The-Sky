@@ -5,6 +5,8 @@ using UnityEngine.Rendering;
 
 public class Enemy : MonoBehaviour
 {
+    public bool isDead = false;
+
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
     [SerializeField] private float colliderDistance;
@@ -12,6 +14,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private Health playerHealth;
+    [SerializeField] private Collider2D player;
+
+
 
     private float cooldownTimer = Mathf.Infinity;
     private Animator anim;
@@ -27,20 +32,28 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        cooldownTimer += Time.deltaTime;
-        if (PlayerInSight())
+        if (!isDead)
         {
-            if (cooldownTimer >= attackCooldown)
+            cooldownTimer += Time.deltaTime;
+            if (PlayerInSight())
             {
-                cooldownTimer = 0;
-                anim.SetTrigger("Attack");
-                DamagePlayer();
+                if (cooldownTimer >= attackCooldown)
+                {
+                    cooldownTimer = 0;
+                    anim.SetTrigger("Attack");
+                    DamagePlayer();
+                }
+            }
+
+            if (enemyPatrol != null)
+            {
+                enemyPatrol.enabled = !PlayerInSight();
             }
         }
-
-        if (enemyPatrol != null)
+        else
         {
-            enemyPatrol.enabled = !PlayerInSight();
+            anim.SetBool("IsDead", true);
+            gameObject.SetActive(false);
         }
     }
 
@@ -68,7 +81,12 @@ public class Enemy : MonoBehaviour
     {
         if (PlayerInSight())
         {
-            playerHealth.TakeDamage(damage);
+            playerHealth.TakeDamage(damage, player);
         }
+    }
+
+    private void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 }

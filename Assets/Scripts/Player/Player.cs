@@ -8,6 +8,14 @@ using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private float range;
+    [SerializeField] private float colliderDistance;
+    [SerializeField] private int damage;
+    [SerializeField] private BoxCollider2D boxCollider;
+    [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private Health enemyHealth;
+    [SerializeField] private Collider2D enemy;
+
     private bool isWalking = false;
     private bool isJumping = false;
     private bool isClimbing = false;
@@ -41,6 +49,16 @@ public class Player : MonoBehaviour
             Walk();
             Climb();
             Jump();
+            anim.SetBool("Hit", false);
+
+            if (Input.GetKey(KeyCode.J))
+            {
+                anim.SetBool("Hit", true);
+                if (EnemyInSight())
+                {
+                    DamageEnemy();
+                }
+            }
         }
         else
         {
@@ -143,5 +161,34 @@ public class Player : MonoBehaviour
     public bool IsFalling()
     {
         return isFalling;
+    }
+
+
+
+
+    private bool EnemyInSight()
+    {
+        RaycastHit2D hit =
+            Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
+            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
+            0, Vector2.left, 0, enemyLayer);
+        if (hit.collider != null)
+        {
+            enemyHealth = hit.transform.GetComponent<Health>();
+        }
+        return hit.collider != null;
+    }
+
+    private void DamageEnemy()
+    {
+        if (EnemyInSight())
+        {
+            enemyHealth.TakeDamage(damage, enemy);
+        }
+    }
+
+    private void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 }

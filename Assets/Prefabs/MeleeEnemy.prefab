@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2960001505460299482}
   - component: {fileID: 5669953822888089241}
   - component: {fileID: 4606396639377398183}
-  - component: {fileID: 915642709774161731}
   - component: {fileID: 7253508502935304488}
+  - component: {fileID: 6967221444347793645}
   - component: {fileID: 3900219551629506018}
   m_Layer: 8
   m_Name: MeleeEnemy
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5669953822888089241
 SpriteRenderer:
@@ -133,20 +133,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
---- !u!114 &915642709774161731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763480439238902178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c2be9be449a2b4e8d1f80cae1bc3fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 0
-  player: {fileID: 0}
 --- !u!114 &7253508502935304488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,15 +145,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127d5a4948a26f44e8c1c9018ecabca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
   attackCooldown: 2
-  range: 4
-  colliderDistance: 0.5
+  range: 1
+  colliderDistance: 0
   damage: 1
   boxCollider: {fileID: 4606396639377398183}
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 8965294446935786869, guid: 483b7ee463c194341958e055d0725073, type: 3}
+  player: {fileID: 3527557493049013625, guid: 483b7ee463c194341958e055d0725073, type: 3}
+--- !u!114 &6967221444347793645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763480439238902178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c2be9be449a2b4e8d1f80cae1bc3fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  player: {fileID: 9171485229782854048, guid: 483b7ee463c194341958e055d0725073, type: 3}
+  enemy: {fileID: 7253508502935304488}
 --- !u!95 &3900219551629506018
 Animator:
   serializedVersion: 5
@@ -181,7 +184,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 0c6da391250b2a243b024d2e8c0cf40a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 

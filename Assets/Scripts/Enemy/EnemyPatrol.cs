@@ -15,10 +15,6 @@ public class EnemyPatrol : MonoBehaviour
     private Vector3 initScale;
     private float idleTimer;
 
-
-    
-
-
     private void Awake()
     {
         initScale = enemy.localScale;
@@ -53,12 +49,10 @@ public class EnemyPatrol : MonoBehaviour
                 DirectionChange();
             }
         }
-
     }
 
     private void DirectionChange()
     {
-
         idleTimer += Time.deltaTime;
         if (idleTimer > idleDuration)
         {
