@@ -806,6 +806,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7253508502935304488, guid: 4663f1f12c5442146be5a0ef1c8fc90a, type: 3}
+      propertyPath: range
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7253508502935304488, guid: 4663f1f12c5442146be5a0ef1c8fc90a, type: 3}
       propertyPath: isDead
       value: 0
       objectReference: {fileID: 0}
@@ -1688,7 +1692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0a0d6b6bd498f4c8817cde145a2fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 2
+  range: 0.1
   colliderDistance: 2
   damage: 1
   boxCollider: {fileID: 1726596634}
